@@ -1,8 +1,0 @@
-utt 3_mix.wav: mix -2.9915, est -0.0021
-utt 1_mix.wav: mix -3.0206, est -0.0045
-utt 0_mix.wav: mix -2.9936, est -0.0039
-utt 2_mix.wav: mix -2.9638, est -0.0042
-========================================
-snr results: (4 utts)
-mix : -2.9924 +- 0.0201
-est : -0.0036 +- 0.0009
