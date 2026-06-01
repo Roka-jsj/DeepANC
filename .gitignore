@@ -1,6 +1,26 @@
+# datasets
 datasets/
+data/
 *.tar.gz
+*.tar.bz2
 *.bz2
+*.zip
+
+# model checkpoints
+*.pt
+*.pth
+*.onnx
+models/
+checkpoints/
+exp*/
+**/exp*/
+**/models/
+**/*.npy
+
+# logs/cache
+*.log
 __pycache__/
 *.pyc
-*.pt
+
+# system
+.DS_Store
