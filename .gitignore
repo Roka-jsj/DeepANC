@@ -1,0 +1,6 @@
+datasets/
+*.tar.gz
+*.bz2
+__pycache__/
+*.pyc
+*.pt

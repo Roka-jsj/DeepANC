@@ -1,0 +1,8 @@
+utt 3_mix.wav: mix 0.0051, est -0.0129
+utt 1_mix.wav: mix 0.0122, est -0.0182
+utt 0_mix.wav: mix 0.0053, est 0.0112
+utt 2_mix.wav: mix 0.0048, est 0.0246
+========================================
+stoi results: (4 utts)
+mix : 0.0068 +- 0.0031
+est : 0.0012 +- 0.0175

@@ -1,0 +1,419 @@
+2026-06-01 06:04:31 [/workspace/GCRN-complex/scripts/utils/models.py:97 - INFO ] Model summary:
+Net(
+  (conv1): GluConv2d(
+    (conv1): Conv2d(2, 16, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(2, 16, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2): GluConv2d(
+    (conv1): Conv2d(16, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(16, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3): GluConv2d(
+    (conv1): Conv2d(32, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(32, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4): GluConv2d(
+    (conv1): Conv2d(64, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(64, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv5): GluConv2d(
+    (conv1): Conv2d(128, 256, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(128, 256, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (glstm): GLSTM(
+    (lstm_list1): ModuleList(
+      (0): LSTM(512, 512, batch_first=True)
+      (1): LSTM(512, 512, batch_first=True)
+    )
+    (lstm_list2): ModuleList(
+      (0): LSTM(512, 512, batch_first=True)
+      (1): LSTM(512, 512, batch_first=True)
+    )
+    (ln1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+    (ln2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (conv5_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (conv2): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (sigmoid): Sigmoid()
+  )
+  (conv1_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv5_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (conv2): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (sigmoid): Sigmoid()
+  )
+  (conv1_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5_t_1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4_t_1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_t_1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2_t_1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1_t_1): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5_t_2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4_t_2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_t_2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2_t_2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1_t_2): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (elu): ELU(alpha=1.0, inplace=True)
+  (fc1): Linear(in_features=161, out_features=161, bias=True)
+  (fc2): Linear(in_features=161, out_features=161, bias=True)
+)
+2026-06-01 06:04:58 [/workspace/GCRN-complex/scripts/utils/models.py:97 - INFO ] Model summary:
+Net(
+  (conv1): GluConv2d(
+    (conv1): Conv2d(2, 16, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(2, 16, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2): GluConv2d(
+    (conv1): Conv2d(16, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(16, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3): GluConv2d(
+    (conv1): Conv2d(32, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(32, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4): GluConv2d(
+    (conv1): Conv2d(64, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(64, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv5): GluConv2d(
+    (conv1): Conv2d(128, 256, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(128, 256, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (glstm): GLSTM(
+    (lstm_list1): ModuleList(
+      (0): LSTM(512, 512, batch_first=True)
+      (1): LSTM(512, 512, batch_first=True)
+    )
+    (lstm_list2): ModuleList(
+      (0): LSTM(512, 512, batch_first=True)
+      (1): LSTM(512, 512, batch_first=True)
+    )
+    (ln1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+    (ln2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (conv5_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (conv2): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (sigmoid): Sigmoid()
+  )
+  (conv1_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv5_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (conv2): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (sigmoid): Sigmoid()
+  )
+  (conv1_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5_t_1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4_t_1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_t_1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2_t_1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1_t_1): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5_t_2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4_t_2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_t_2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2_t_2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1_t_2): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (elu): ELU(alpha=1.0, inplace=True)
+  (fc1): Linear(in_features=161, out_features=161, bias=True)
+  (fc2): Linear(in_features=161, out_features=161, bias=True)
+)
+2026-06-01 06:05:00 [/workspace/GCRN-complex/scripts/utils/models.py:105 - INFO ] Trainable parameter count: 9,771,340 -> 37.27 MB
+
+2026-06-01 06:05:00 [/workspace/GCRN-complex/scripts/utils/models.py:117 - INFO ] Resuming model from ./exp_dns_1000/models/best.pt
+2026-06-01 06:05:00 [/workspace/GCRN-complex/scripts/utils/models.py:129 - INFO ] model info: epoch 28, iter 100, cv_loss - 0.0041
+
+2026-06-01 06:05:54 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:05:54 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.1162 | cv_loss: 0.0884 )
+
+2026-06-01 06:06:45 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:06:45 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0776 | cv_loss: 0.0752 )
+
+2026-06-01 06:07:25 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:07:25 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0707 | cv_loss: 0.0679 )
+
+2026-06-01 06:08:18 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:08:18 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0682 | cv_loss: 0.0660 )
+
+2026-06-01 06:09:11 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:09:11 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0679 | cv_loss: 0.0642 )
+
+2026-06-01 06:10:04 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:10:04 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0590 | cv_loss: 0.0612 )
+
+2026-06-01 06:10:40 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:10:40 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0670 | cv_loss: 0.0602 )
+
+2026-06-01 06:11:32 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:11:32 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0620 | cv_loss: 0.0589 )
+
+2026-06-01 06:12:26 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:12:26 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0625 | cv_loss: 0.0586 )
+
+2026-06-01 06:13:18 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:13:18 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0595 | cv_loss: 0.0573 )
+
+2026-06-01 06:14:10 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:14:10 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0628 | cv_loss: 0.0544 )
+
+2026-06-01 06:15:03 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:15:03 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0557 | cv_loss: 0.0542 )
+
+2026-06-01 06:15:55 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:15:55 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0590 | cv_loss: 0.0557 )
+
+2026-06-01 06:16:40 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:16:40 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0563 | cv_loss: 0.0530 )
+
+2026-06-01 06:17:24 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:17:24 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0545 | cv_loss: 0.0618 )
+
+2026-06-01 06:18:08 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:18:08 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0545 | cv_loss: 0.0506 )
+
+2026-06-01 06:18:54 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:18:54 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0539 | cv_loss: 0.0544 )
+
+2026-06-01 06:19:37 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:19:37 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0540 | cv_loss: 0.0613 )
+
+2026-06-01 06:20:24 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:20:24 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0526 | cv_loss: 0.0520 )
+
+2026-06-01 06:21:11 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:21:11 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0569 | cv_loss: 0.0518 )
+
+2026-06-01 06:22:02 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:22:02 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0562 | cv_loss: 0.0503 )
+
+2026-06-01 06:22:55 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:22:55 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [28/30], ( tr_loss: 0.0490 | cv_loss: 0.0489 )
+
+2026-06-01 06:23:56 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:23:56 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0463 | cv_loss: 0.0496 )
+
+2026-06-01 06:24:48 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:24:48 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0465 | cv_loss: 0.0526 )
+
+2026-06-01 06:25:40 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:25:40 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0505 | cv_loss: 0.0483 )
+
+2026-06-01 06:26:31 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:26:31 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0555 | cv_loss: 0.0489 )
+
+2026-06-01 06:27:18 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:27:18 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0481 | cv_loss: 0.0504 )
+
+2026-06-01 06:28:04 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:28:04 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0537 | cv_loss: 0.0481 )
+
+2026-06-01 06:28:52 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:28:52 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0503 | cv_loss: 0.0485 )
+
+2026-06-01 06:29:39 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:29:39 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0512 | cv_loss: 0.0485 )
+
+2026-06-01 06:30:27 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:30:27 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0487 | cv_loss: 0.0486 )
+
+2026-06-01 06:31:20 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:31:20 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0475 | cv_loss: 0.0474 )
+
+2026-06-01 06:32:06 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:32:06 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0466 | cv_loss: 0.0464 )
+
+2026-06-01 06:32:59 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:32:59 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0442 | cv_loss: 0.0453 )
+
+2026-06-01 06:33:52 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:33:52 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0505 | cv_loss: 0.0475 )
+
+2026-06-01 06:34:44 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:34:44 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0483 | cv_loss: 0.0490 )
+
+2026-06-01 06:35:36 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:35:36 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0480 | cv_loss: 0.0470 )
+
+2026-06-01 06:36:28 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:36:28 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0431 | cv_loss: 0.0478 )
+
+2026-06-01 06:37:19 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:37:19 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0429 | cv_loss: 0.0469 )
+
+2026-06-01 06:38:07 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:38:07 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0451 | cv_loss: 0.0494 )
+
+2026-06-01 06:38:55 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:38:55 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0445 | cv_loss: 0.0478 )
+
+2026-06-01 06:39:39 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:39:39 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0451 | cv_loss: 0.0616 )
+
+2026-06-01 06:40:25 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:40:25 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0465 | cv_loss: 0.0466 )
+
+2026-06-01 06:41:11 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:41:11 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [29/30], ( tr_loss: 0.0458 | cv_loss: 0.0448 )
+
+2026-06-01 06:42:02 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:42:02 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0451 | cv_loss: 0.0493 )
+
+2026-06-01 06:42:47 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:42:47 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0423 | cv_loss: 0.0441 )
+
+2026-06-01 06:43:38 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:43:38 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0441 | cv_loss: 0.0440 )
+
+2026-06-01 06:44:30 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:44:30 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0411 | cv_loss: 0.0439 )
+
+2026-06-01 06:45:22 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:45:22 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0455 | cv_loss: 0.0442 )
+
+2026-06-01 06:46:14 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:46:14 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0440 | cv_loss: 0.0535 )
+
+2026-06-01 06:47:06 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:47:06 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0447 | cv_loss: 0.0450 )
+
+2026-06-01 06:47:58 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:47:58 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0378 | cv_loss: 0.0427 )
+
+2026-06-01 06:48:44 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:48:44 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0416 | cv_loss: 0.0437 )
+
+2026-06-01 06:49:31 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:49:31 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0412 | cv_loss: 0.0484 )
+
+2026-06-01 06:50:16 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:50:16 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0437 | cv_loss: 0.0429 )
+
+2026-06-01 06:51:00 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:51:00 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0416 | cv_loss: 0.0443 )
+
+2026-06-01 06:51:46 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:51:46 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0457 | cv_loss: 0.0455 )
+
+2026-06-01 06:52:30 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:52:30 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0442 | cv_loss: 0.0431 )
+
+2026-06-01 06:53:16 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:53:16 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0475 | cv_loss: 0.0426 )
+
+2026-06-01 06:54:05 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:54:05 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0426 | cv_loss: 0.0427 )
+
+2026-06-01 06:54:57 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:54:57 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0414 | cv_loss: 0.0447 )
+
+2026-06-01 06:55:49 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:55:49 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0385 | cv_loss: 0.0438 )
+
+2026-06-01 06:56:42 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:56:42 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0440 | cv_loss: 0.0441 )
+
+2026-06-01 06:57:34 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:57:34 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0377 | cv_loss: 0.0424 )
+
+2026-06-01 06:58:26 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:58:26 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0436 | cv_loss: 0.0434 )
+
+2026-06-01 06:59:13 [/workspace/GCRN-complex/scripts/utils/models.py:205 - INFO ] Saving checkpoint into exp_librispeech_dns/latest.pt
+2026-06-01 06:59:13 [/workspace/GCRN-complex/scripts/utils/models.py:208 - INFO ] Epoch [30/30], ( tr_loss: 0.0390 | cv_loss: 0.0435 )
+

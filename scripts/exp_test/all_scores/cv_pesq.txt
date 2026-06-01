@@ -1,0 +1,8 @@
+utt 3_mix.wav: mix 1.5272, est 1.5935
+utt 1_mix.wav: mix 1.1163, est 1.0978
+utt 0_mix.wav: mix 1.7173, est 4.4818
+utt 2_mix.wav: mix 1.1918, est 1.6153
+========================================
+pesq results: (4 utts)
+mix : 1.3881 +- 0.2450
+est : 2.1971 +- 1.3352

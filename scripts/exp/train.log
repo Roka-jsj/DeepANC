@@ -1,0 +1,112 @@
+2026-05-19 08:17:17 [/workspace/GCRN-complex/scripts/utils/models.py:97 - INFO ] Model summary:
+Net(
+  (conv1): GluConv2d(
+    (conv1): Conv2d(2, 16, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(2, 16, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2): GluConv2d(
+    (conv1): Conv2d(16, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(16, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3): GluConv2d(
+    (conv1): Conv2d(32, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(32, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4): GluConv2d(
+    (conv1): Conv2d(64, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(64, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv5): GluConv2d(
+    (conv1): Conv2d(128, 256, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): Conv2d(128, 256, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (glstm): GLSTM(
+    (lstm_list1): ModuleList(
+      (0): LSTM(512, 512, batch_first=True)
+      (1): LSTM(512, 512, batch_first=True)
+    )
+    (lstm_list2): ModuleList(
+      (0): LSTM(512, 512, batch_first=True)
+      (1): LSTM(512, 512, batch_first=True)
+    )
+    (ln1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+    (ln2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+  )
+  (conv5_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (conv2): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (sigmoid): Sigmoid()
+  )
+  (conv1_t_1): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv5_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(512, 128, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv4_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(256, 64, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv3_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(128, 32, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (conv2_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (conv2): ConvTranspose2d(64, 16, kernel_size=(1, 3), stride=(1, 2), output_padding=(0, 1))
+    (sigmoid): Sigmoid()
+  )
+  (conv1_t_2): GluConvTranspose2d(
+    (conv1): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (conv2): ConvTranspose2d(32, 1, kernel_size=(1, 3), stride=(1, 2))
+    (sigmoid): Sigmoid()
+  )
+  (bn1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5_t_1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4_t_1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_t_1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2_t_1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1_t_1): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn5_t_2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn4_t_2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn3_t_2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn2_t_2): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (bn1_t_2): BatchNorm2d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (elu): ELU(alpha=1.0, inplace=True)
+  (fc1): Linear(in_features=161, out_features=161, bias=True)
+  (fc2): Linear(in_features=161, out_features=161, bias=True)
+)
+2026-05-19 08:17:19 [/workspace/GCRN-complex/scripts/utils/models.py:105 - INFO ] Trainable parameter count: 9,771,340 -> 37.27 MB
+
+2026-05-19 08:17:19 [/workspace/GCRN-complex/scripts/utils/models.py:132 - INFO ] Training from scratch...
+
